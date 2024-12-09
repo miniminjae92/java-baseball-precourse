@@ -1,4 +1,4 @@
-package baseball;
+package baseball.domain;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -20,7 +20,7 @@ public class HintGeneratorTest {
 
         HintGenerator hintGenerator = new HintGenerator(baseballNumber.getNumber(), winningNumber);
 
-        assertThat(hintGenerator.checkStrike()).isEqualTo(exceptedStrike);
-        assertThat(hintGenerator.checkBall()).isEqualTo(expectedBall);
+        assertThat(hintGenerator.generateCount().get(1)).isEqualTo(exceptedStrike);
+        assertThat(hintGenerator.generateCount().get(0)).isEqualTo(expectedBall);
     }
 }
